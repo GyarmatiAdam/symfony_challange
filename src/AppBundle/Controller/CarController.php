@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Cars;
+use AppBundle\Entity\Member;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,8 +18,9 @@ class CarController extends Controller
     public function indexAction()
     {
         //fetch data
+        $members = $this->getDoctrine()->getRepository('AppBundle:Member')->findAll();
         $cars = $this->getDoctrine()->getRepository('AppBundle:Cars')->findAll();
-        return $this->render('car/index.html.twig', array('cars'=>$cars));
+        return $this->render('car/index.html.twig', array('cars'=>$cars, 'members'=>$members));
     }
 
     /**
