@@ -16,11 +16,11 @@
        <tr>
            <th scope="row">{{car.id}}</th>
            <td>{{car.carName}}</td>
+           <td>{{car.carType}}</td>
            {% for member in members %}
            <td>{{member.firstName}}</td>
            {% endfor %}
-           <td> <a href="/details/{{car.id}}" class="btn btn-success">Details</a>
-                   
+           <td> <a href="/details/{{car.id}}" class="btn btn-success">Details</a>      
            <a href="/edit/{{car.id}}" class="btn btn-default">Edit</a>
            <a href="/delete/{{car.id}}" class="btn btn-danger">Delete</a>        
            </td>
