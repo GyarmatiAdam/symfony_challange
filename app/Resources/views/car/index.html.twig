@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+       
+<h2 class="page-header"> Cars </h2>
+  <table class="table table-striped">
+   <thead>
+       <tr>
+           <th>#</th>
+           <th>Car Name</th>
+           <th>Car Type</th>
+           <th>Members</th>
+       </tr>
+   </thead>
+{% for car in cars %}
+   <tbody>
+       <tr>
+           <th scope="row">{{car.id}}</th>
+           <td>{{car.carName}}</td>
+           {% for member in members %}
+           <td>{{member.firstName}}</td>
+           {% endfor %}
+           <td> <a href="/details/{{car.id}}" class="btn btn-success">Details</a>
+                   
+           <a href="/edit/{{car.id}}" class="btn btn-default">Edit</a>
+           <a href="/delete/{{car.id}}" class="btn btn-danger">Delete</a>        
+           </td>
+       </tr> 
+{% endfor %}
+   </tbody>
+   </table>
+{% endblock %}

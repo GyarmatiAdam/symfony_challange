@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+       <a class="btn btn-default" href="/">Back to the Home Page</a>
+       <hr>
+       <h2 class="page-header">Car details:</h2>
+       <ul class="list-group">
+               <li class="list-group-item">Name: {{cars.carName}}</li>
+               <li class="list-group-item">Priority: {{cars.carType}}</li>
+       </ul>
+       <p>
+               {{cars.carDate}}
+       </p>
+{% endblock %}
